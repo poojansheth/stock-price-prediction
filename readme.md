@@ -13,10 +13,10 @@ We train and test the prediction algorithm with following steps-
     * Neutral: 0 if next-day beta-hedged return >= -1 and <=1 stdevs of beta-hedged return distribution
     * Sell: -1 if next-day beta-hedged return <= -1 and >=-2 stdevs of beta-hedged return distribution
     * Strong sell: -2 if next-day beta-hedged return <= -2 stdevs of beta-hedged return distribution
-![Training data snippet](training_data.jpg)
+   ![Training data snippet](training_data.jpg)
 5. **Training the prediction algorithm:** Classification algorithm was trained on the Jan, 2019 to May, 2020 dataset using the Random Forest Classifier (RCF) from Scikit-Learn. Other classification algorithms was also tried but RCF delivered the best performance. It will be clear from the trading strategy that for this algorithm, precision in classification of 2 and -2 were the most important determinants of success of the trading strategy rather than overall precision or recall. 
 6. **The trading strategy:** Beta-hedged positions are taken in each stock that does not return 0 as prediction and percentage of portfolio allocated to each stock(S[i]) is calculated according to the formula below. It is clear that not all mis-classifications are equally costly and in fact, some mis-classifications such as 1 mis-classified as 2 will be beneficial as that stock will be allocated double the capital than it would have been allocated otherwise and it outperforms the broader market. 
-![Equation](equation.jpg)
+   ![Equation](equation.jpg)
 7. **Results on test dataset:** The trading strategy derived from the algorithm trained above was used on the two test datasets. In Sep, 2018 to Dec,2018 dataset, return on S&P500 was -14.5% whereas strategy return was -1%. In Jun, 2020 to Oct, 2020 dataset, return on S&P500 was 13% whereas strategy return was 11%. In totality, over the eigth months, the strategy outperformed the S&P500 index by 11.5% and exhibited much less volatility than the index. 
 ![Performance comparison](perf_charts.jpg)
 
