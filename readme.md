@@ -13,7 +13,7 @@ We train and test the prediction algorithm with following steps-
     * Neutral: 0 if next-day beta-hedged return >= -1 and <=1 stdevs of beta-hedged return distribution
     * Sell: -1 if next-day beta-hedged return <= -1 and >=-2 stdevs of beta-hedged return distribution
     * Strong sell: -2 if next-day beta-hedged return <= -2 stdevs of beta-hedged return distribution
-![Training data snippet](https://github.com/poojansheth/stock-tweet-analysis/blob/master/training_data.jpg?raw=true)
+![Training data snippet](training_data.jpg)
 5. **Training the prediction algorithm:** Classification algorithm was trained on the Jan, 2019 to May, 2020 dataset using the Random Forest Classifier (RCF) from Scikit-Learn. Other classification algorithms was also tried but RCF delivered the best performance. It will be clear from the trading strategy that for this algorithm, precision in classification of 2 and -2 were the most important determinants of success of the trading strategy rather than overall precision or recall. 
 6. **The trading strategy:** Beta-hedged positions are taken in each stock that does not return 0 as prediction and percentage of portfolio allocated to each stock(S[i]) is calculated as following:
 ![Equation](https://github.com/poojansheth/stock-tweet-analysis/blob/master/equation.jpg?raw=true)
