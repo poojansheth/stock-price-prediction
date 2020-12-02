@@ -53,7 +53,7 @@ This will collect raw tweet data and the combined training data in .../Initial s
 ```
 python3 prediction.py
 ```
-prediction.py splits the scraped data into 80:20 non-shuffled training/testing sets, trains random forest classifiers on training set and plots the performance of the trading strategy based on predictions from the trained algorithm on the test set
+prediction.py splits the scraped data into 80:20 non-shuffled training/testing sets, trains random forest classifiers on training set and plots the performance of the trading strategy based on predictions from the trained algorithm on the test set. prediction.py also generates historical_data1.xlsx which is used for ongoing predictions.
   
 **Ongoing predictions:** Once historical data for sufficient length of time has been compiled (ideally atleast one year) using SP100_tweet_and_stock_price_scraper.py as described above, daily_update_pre_market.py churns out predicitions for any given day if it is run before the market open (9:30 AM EST). The script can take upto 10 minutes to run. After the market close (4 PM EST, run daily_update_post_market.py to get summary of performance of each recommendation and total return of the strategy vs return of the S&P500 index. The predicitions and performance summary are sent out on emails to the mailing list as specified in daily_update_pre_market.py and daily_update_post_market.py scripts. You will also need to set-up an email account and fill in the ID/password details in those files. It is best to use crontab to schedule the running of these scripts at 9AM and 4:30 PM EST respectively:
 ```
