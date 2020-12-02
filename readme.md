@@ -39,7 +39,7 @@ Python 3.x (this project uses Python 3.8) and the following Python modules:
 * Bs4
 
 ## How to use
-Clone this project and cd into the main project folder (stock-tweet-analysis) in a terminal. Install all the required modules with:
+Clone this project and cd into the main project folder (stock-price-prediction) in a terminal. Install all the required modules with:
 ```
 pip3 install -r requirements.txt
 ```
