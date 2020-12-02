@@ -49,7 +49,7 @@ The main project folder contains two sub-folders:
 ```
 python3 SP100_tweet_and_stock_price_scraper.py
 ```
-This will collect raw tweet data and the combined training data in .../Initial scraping/tweet data folder.Once this is done, you can run:
+This will collect raw tweet data in .../Initial scraping/tweet data folder and the combined training data in .../Ongoing predictions folder. Once this is done, you can run:
 ```
 python3 prediction.py
 ```
