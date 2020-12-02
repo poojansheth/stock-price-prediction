@@ -1,0 +1,15 @@
+bs4==0.0.1
+DateTime==4.3
+holidays==0.10.3
+matplotlib==3.3.3
+numpy==1.19.4
+openpyxl==3.0.5
+pandas==1.1.4
+pandas-market-calendars==1.6.1
+python-dateutil==2.8.1
+pytz==2020.4
+requests==2.25.0
+sklearn==0.0
+snscrape==0.3.4
+vaderSentiment==3.3.2
+yahoofinancials==1.6
