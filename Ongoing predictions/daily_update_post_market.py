@@ -16,7 +16,6 @@ import smtplib, ssl
 import io
 from email.mime.image import MIMEImage
 import matplotlib.pyplot as plt
-from pathlib import Path
 pd.options.mode.chained_assignment = None  # disable chain assignment warning
 
 def send_email(df_plot,df_perf):
@@ -68,15 +67,14 @@ if date_today.weekday() in hd.WEEKEND or date_today in holidays_nyse:
 	raise SystemExit(0)
 
 dirname = os.getcwd()
-p = Path(os.path.abspath(__file__)).parents[1]
-filename = os.path.join(p, 'Initial scraping','tweet data','combined_training_data2.xlsx')
+filename = os.path.join(dirname,'combined_training_data2.xlsx')
 filename1 = os.path.join(dirname, 'historical_data1.xlsx')
 filename3 = os.path.join(dirname, 'beta.xlsx')
 
 
-beta = pd.read_excel(filename2)
+beta = pd.read_excel(filename3)
 dfs_hist = pd.read_excel(filename1,sheet_name=None)
-dfs_training = pd.read_excel(filename3,sheet_name=None)
+dfs_training = pd.read_excel(filename,sheet_name=None)
 
 assets = beta.columns.values.tolist()
 assets.insert(0,'^GSPC')
